@@ -12,8 +12,8 @@ export interface ProjectConfig {
 }
 
 export const MASTER_CREDENTIALS = {
-  username: 'admin',
-  password: '123' // Aap is password ko badal sakte hain
+  username: 'Admin.bafna@gmail.com',
+  password: 'HelloBafnatoys@90433'
 };
 
 export const projects: ProjectConfig[] = [
