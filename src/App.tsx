@@ -245,39 +245,22 @@ export default function App() {
     <div className="command-center-page">
       <div className="command-center-shell">
       {/* Header Panel */}
-      <div className="glass-panel animate-fade-in command-header" style={{
-        padding: '40px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        gap: '24px',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)',
-        border: '1px solid rgba(255, 255, 255, 0.5)'
-      }}>
-        <div className="command-brand" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <div className="command-logo" style={{
-            background: 'linear-gradient(135deg, rgba(124, 92, 237, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%)',
-            padding: '16px',
-            borderRadius: '20px',
-            border: '1px solid rgba(124, 92, 237, 0.2)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
+      <div className="glass-panel animate-fade-in command-header">
+        <div className="command-brand">
+          <div className="command-logo">
             <span>MD</span>
           </div>
           <div>
-            <h1 className="command-title" style={{ fontSize: '2.5rem', fontWeight: 850, letterSpacing: '-0.02em', margin: 0 }}>
+            <h1 className="command-title">
               MD Command Center
             </h1>
-            <p className="command-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginTop: '6px' }}>
+            <p className="command-subtitle">
               One command center. Every business.
             </p>
           </div>
         </div>
 
-        <div className="command-actions" style={{ display: 'flex', gap: '12px' }}>
+        <div className="command-actions">
           <div className="system-health">
             <span className="system-health-dot" />
             <div>
@@ -289,28 +272,6 @@ export default function App() {
           <button
             onClick={() => setIsSettingsOpen(true)}
             className="command-button command-button-settings"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(124, 92, 237, 0.06)',
-              border: '1px solid rgba(124, 92, 237, 0.2)',
-              color: '#7c3aed',
-              padding: '10px 20px',
-              borderRadius: '12px',
-              fontSize: '0.9rem',
-              fontWeight: 650,
-              cursor: 'pointer',
-              transition: 'background-color 0.2s, border-color 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(124, 92, 237, 0.1)';
-              e.currentTarget.style.borderColor = '#7c3aed';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(124, 92, 237, 0.06)';
-              e.currentTarget.style.borderColor = 'rgba(124, 92, 237, 0.2)';
-            }}
           >
             Settings <Settings size={16} />
           </button>
@@ -319,28 +280,6 @@ export default function App() {
           <button
             onClick={handleLogout}
             className="command-button command-button-logout"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(239, 68, 68, 0.06)',
-              border: '1px solid rgba(239, 68, 68, 0.2)',
-              color: '#ef4444',
-              padding: '10px 20px',
-              borderRadius: '12px',
-              fontSize: '0.9rem',
-              fontWeight: 650,
-              cursor: 'pointer',
-              transition: 'background-color 0.2s, border-color 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
-              e.currentTarget.style.borderColor = '#ef4444';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.06)';
-              e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.2)';
-            }}
           >
             Sign Out <LogOut size={16} />
           </button>
@@ -363,11 +302,7 @@ export default function App() {
       </section>
 
       {/* Grid of Cards */}
-      <div className="animate-fade-in command-app-grid" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '32px'
-      }}>
+      <div className="animate-fade-in command-app-grid">
         {projects.map((project) => {
           const mainUrl = project.sso === false
             ? project.prodUrl
@@ -396,27 +331,16 @@ export default function App() {
 
               {/* Status Header */}
               <div className="card-status-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="operational-badge" style={{ 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
-                  gap: '6px', 
-                  background: 'rgba(16, 185, 129, 0.06)', 
-                  border: '1px solid rgba(16, 185, 129, 0.15)',
-                  color: '#10b981',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  padding: '4px 10px',
-                  borderRadius: '12px'
-                }}>
+                <span className="operational-badge">
                   <span className="pulse-active" /> OPERATIONAL
                 </span>
-                <span className="admin-badge" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span className="admin-badge" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <Layers size={14} /> ADMIN
                 </span>
               </div>
 
               {/* 3D Isometric Image */}
-              <div className="card-visual" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '8px 0' }}>
+              <div className="card-visual">
                 {project.id === 'md-panel' ? (
                   <div className="md-executive-visual" aria-label="MD executive dashboard illustration">
                     <span className="executive-screen executive-screen-left"><BarChart3 size={30} /></span>
@@ -427,25 +351,16 @@ export default function App() {
                   <img 
                     src={project.imgUrl} 
                     alt={project.name}
-                    style={{
-                      width: '100%',
-                      maxWidth: '160px',
-                      height: 'auto',
-                      aspectRatio: '1 / 1',
-                      borderRadius: '24px',
-                      objectFit: 'cover',
-                      boxShadow: `0 8px 20px ${project.accentGlow.replace('0.4', '0.2')}`
-                    }}
                   />
                 )}
               </div>
 
               {/* Info text */}
               <div className="card-info">
-                <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-primary)', margin: 0 }}>
+                <h2>
                   {project.name}
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.5', marginTop: '8px', minHeight: '54px' }}>
+                <p>
                   {project.description}
                 </p>
               </div>
@@ -457,38 +372,15 @@ export default function App() {
                 rel="noreferrer"
                 className="card-launch-button"
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  width: '100%',
-                  padding: '14px',
-                  borderRadius: '16px',
-                  background: `linear-gradient(135deg, ${project.themeColor} 0%, ${project.themeColor}cc 100%)`,
-                  color: '#ffffff',
-                  fontWeight: 750,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                  border: '1px solid rgba(255,255,255,0.15)',
-                  boxShadow: `0 4px 12px ${project.accentGlow.replace('0.4', '0.25')}`,
-                  transition: 'opacity 0.2s'
+                  background: `linear-gradient(135deg, ${project.themeColor} 0%, ${project.themeColor}dd 100%)`,
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.92'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
               >
                 Launch Application <ExternalLink size={16} />
               </a>
 
               {/* Quick Links Section */}
-              <div className="card-quick-links" style={{ 
-                borderTop: '1px solid rgba(15, 23, 42, 0.06)', 
-                paddingTop: '20px',
-                marginTop: '8px',
-                display: 'flex', 
-                flexDirection: 'column', 
-                gap: '12px' 
-              }}>
-                <span className="quick-links-label" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div className="card-quick-links">
+                <span className="quick-links-label">
                   Related Interfaces
                 </span>
                 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -504,27 +396,6 @@ export default function App() {
                         target="_blank"
                         rel="noreferrer"
                         className="quick-link-pill"
-                        style={{
-                          fontSize: '0.8rem',
-                          color: 'var(--text-primary)',
-                          background: 'rgba(15, 23, 42, 0.02)',
-                          border: '1px solid rgba(15, 23, 42, 0.05)',
-                          padding: '6px 12px',
-                          borderRadius: '10px',
-                          textDecoration: 'none',
-                          fontWeight: 600,
-                          transition: 'background-color 0.2s, border-color 0.2s, color 0.2s'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.9)';
-                          e.currentTarget.style.borderColor = project.themeColor;
-                          e.currentTarget.style.color = project.themeColor;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(15, 23, 42, 0.02)';
-                          e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.05)';
-                          e.currentTarget.style.color = 'var(--text-primary)';
-                        }}
                       >
                         {link.label}
                       </a>

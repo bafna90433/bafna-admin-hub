@@ -153,11 +153,16 @@ input:not(:checked) + .slider .slider-label-local {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background:
     radial-gradient(circle at -5% 20%, rgba(124, 58, 237, 0.08), transparent 32%),
     radial-gradient(circle at 105% 30%, rgba(37, 99, 235, 0.08), transparent 35%),
     linear-gradient(145deg, #f8fafc 0%, #f1f5f9 48%, #e2e8f0 100%);
   color: #0f172a;
+}
+
+.command-center-page * {
+  font-family: inherit;
 }
 
 .command-center-page::before {
@@ -198,23 +203,32 @@ input:not(:checked) + .slider .slider-label-local {
 }
 
 .glass-panel.command-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   min-height: 104px;
   padding: 18px 28px !important;
   gap: 22px !important;
   flex-wrap: nowrap !important;
   border-radius: 20px !important;
   border: 1px solid rgba(226, 232, 240, 0.9) !important;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
 }
 
 .command-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
   min-width: 390px;
 }
 
 .command-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 64px;
   height: 64px;
   flex: 0 0 64px;
@@ -239,22 +253,26 @@ input:not(:checked) + .slider .slider-label-local {
   font-size: clamp(1.8rem, 2.1vw, 2.4rem) !important;
   font-weight: 850 !important;
   line-height: 1.1;
+  margin: 0 !important;
 }
 
 .command-subtitle {
   color: #475569 !important;
   font-size: 0.92rem !important;
+  margin-top: 4px !important;
 }
 
 .command-actions {
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
   margin-left: auto;
 }
 
 .system-health {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
   min-width: 220px;
   margin-right: 16px;
   padding: 4px 24px 4px 0;
@@ -290,11 +308,15 @@ input:not(:checked) + .slider .slider-label-local {
 }
 
 .command-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
   min-width: 128px;
-  justify-content: center;
   padding: 10px 18px !important;
   border-radius: 12px !important;
   font-weight: 700 !important;
+  cursor: pointer !important;
   backdrop-filter: blur(12px);
   transition: all 0.2s ease !important;
 }
@@ -324,23 +346,23 @@ input:not(:checked) + .slider .slider-label-local {
 }
 
 .command-overview {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   min-height: 82px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
 }
 
 .overview-item {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding: 15px 28px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  padding: 15px 28px !important;
 }
 
 .overview-item + .overview-item::before {
@@ -356,6 +378,7 @@ input:not(:checked) + .slider .slider-label-local {
 .overview-icon {
   width: 44px;
   height: 44px;
+  flex: 0 0 44px;
   display: grid;
   place-items: center;
   border-radius: 14px;
@@ -385,6 +408,7 @@ input:not(:checked) + .slider .slider-label-local {
 }
 
 .command-app-grid {
+  display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 20px !important;
 }
@@ -432,12 +456,16 @@ input:not(:checked) + .slider .slider-label-local {
 }
 
 .operational-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
   padding: 4px 11px !important;
   color: #059669 !important;
-  border-color: #a7f3d0 !important;
+  border: 1px solid #a7f3d0 !important;
   background: #ecfdf5 !important;
   font-size: 0.72rem !important;
   font-weight: 700 !important;
+  border-radius: 12px !important;
 }
 
 .admin-badge {
@@ -450,6 +478,9 @@ input:not(:checked) + .slider .slider-label-local {
   grid-area: visual;
   min-height: 150px;
   margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   z-index: 1;
 }
 
@@ -457,6 +488,7 @@ input:not(:checked) + .slider .slider-label-local {
   width: 150px !important;
   height: 150px !important;
   border-radius: 20px !important;
+  object-fit: cover !important;
   box-shadow: 0 10px 24px color-mix(in srgb, var(--card-accent) 20%, transparent) !important;
 }
 
@@ -471,6 +503,7 @@ input:not(:checked) + .slider .slider-label-local {
   font-size: 1.35rem !important;
   font-weight: 800 !important;
   line-height: 1.15;
+  margin: 0 !important;
 }
 
 .card-info p {
@@ -484,15 +517,24 @@ input:not(:checked) + .slider .slider-label-local {
 .card-launch-button {
   grid-area: launch;
   z-index: 1;
-  padding: 11px !important;
-  border-radius: 12px !important;
-  font-size: 0.88rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 12px 14px !important;
+  border-radius: 14px !important;
+  font-size: 0.9rem !important;
+  font-weight: 750 !important;
   color: #ffffff !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
   box-shadow: 0 6px 18px color-mix(in srgb, var(--card-accent) 30%, transparent) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
 }
 
 .card-launch-button:hover {
-  opacity: 1 !important;
+  opacity: 0.95 !important;
   filter: brightness(1.08);
   transform: translateY(-1px);
 }
@@ -500,25 +542,34 @@ input:not(:checked) + .slider .slider-label-local {
 .card-quick-links {
   grid-area: links;
   z-index: 1;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
   margin-top: 1px !important;
-  padding-top: 11px !important;
-  gap: 8px !important;
+  padding-top: 14px !important;
   border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
 }
 
 .quick-links-label {
   color: #94a3b8 !important;
-  font-size: 0.66rem !important;
+  font-size: 0.68rem !important;
   font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
 
 .quick-link-pill {
-  padding: 5px 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 6px 14px !important;
   color: #334155 !important;
   border: 1px solid rgba(226, 232, 240, 0.9) !important;
   background: #f8fafc !important;
-  font-size: 0.74rem !important;
+  border-radius: 10px !important;
+  font-size: 0.78rem !important;
   font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s !important;
 }
 
 .quick-link-pill:hover {
